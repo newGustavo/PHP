@@ -46,11 +46,19 @@ for ($i = 0 ; $i < count($arrayDeArrays); $i++){
     echo $arrayDeArrays[$i]["saldo"];
 }
 
-// Para Cada -> foreach 
+$conta1 = [
+    "nome" => "Gustavo",
+    "saldo" => 10000
+];
+$conta2 = [
+    "nome" => "Augusto",
+    "saldo" => 12000
+];
 
-echo PHP_EOL;
-echo "BREAK ROW" . PHP_EOL;
+$meuArray = [$conta1, $conta2];
 
-foreach ($arrayDeArrays as $a) {
-    echo $a . PHP_EOL;
+echo PHP_EOL . "Break row" . PHP_EOL;
+
+for ($i = 0 ; $i < count($meuArray) ; $i++ ) {
+    echo $meuArray[$i] . PHP_EOL;
 }
