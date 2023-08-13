@@ -26,41 +26,41 @@ $dado3 = [
     "nome" => "Neto",
     "valor" => 15000
 ];
+ require 'operacoes.php';
 
 $listaDados = [$dado, $dado0, $dado1, $dado2, $dado3];
-function sacar($nome, $valor){
-    global $listaDados;
 
-    for ( $i = 0 ; $i < count($listaDados) ; $i++){
-        if ($listaDados[$i]['nome'] == $nome){
-            if (is_numeric($valor)) {
-                if ($listaDados[$i]['valor'] > $valor){
-                    $listaDados[$i]['valor'] -= $valor;
-                    echo "Transação Efetuada! Seu novo valor é de " . $listaDados[$i]['valor']  . "." . PHP_EOL;
-                } else {
-                    echo "Saldo Insuficiente!" . PHP_EOL;
-                }
-            } else {
-                echo "Valor Invalido!" . PHP_EOL;
-            }
-        }
-    }
+
+$dado10 = [
+    "nome" => "Teste",
+    "saldo" => "9999",
+];
+
+$newDados = [
+    031 => [
+        'nome' => "Gustavo",
+        'saldo' => 9999,
+    ],
+    866 => [
+        'nome' => "Raquel",
+        'saldo' => 9999,
+    ],
+    217 => [
+        'nome' => "Ana",
+        'saldo' => 9999,
+    ],
+    572 => [
+        'nome' => "Val",
+        'saldo' => 9999,
+    ],
+    252 => $dado10
+];
+$valor = 500;
+newSacar($newDados[866], $valor);
+foreach ($newDados as $ind => $conta){
+    echo "O valor do indice é {$ind}, o nome é {$conta['nome']} e o saldo é de {$conta['saldo']}" . PHP_EOL;
 }
 
-function depositar($nome, $valor){
-    global $listaDados;
-
-    for ( $i = 0 ; $i < count($listaDados) ; $i++){
-        if ($listaDados[$i]['nome'] == $nome){
-            if (is_numeric($valor) && $valor > 0){
-                $listaDados[$i]['valor'] += $valor;
-                echo "Transação Efetuada! Seu novo valor é de " . $listaDados[$i]['valor'] . "." . PHP_EOL;
-            } else {
-                echo "Falha na execução! Seu saldo é de: " . $listaDados[$i]['valor'] . "." . PHP_EOL;
-            }
-        }
-    }
-}
 
 sacar('Neto', 14000);
 sacar('Neto', 2000);
