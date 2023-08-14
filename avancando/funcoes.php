@@ -78,3 +78,17 @@ depositar('Neto', 'a');
 //     echo "Nome: " . $dados['nome'] . PHP_EOL;
 //     echo "Saldo: " . $dados['valor'] . PHP_EOL;
 // }
+
+// Função list()
+
+
+$listas = [031, 866, 572, 70, 217, 252];
+
+list($indice0, , $indice2) = $listas;
+
+
+echo PHP_EOL;
+echo "os números selecionados são: {$indice0} e {$indice2}";
+
+// é possivel passar valores de um array para as variaveis
+// no exemplo vou usar a lista newDados

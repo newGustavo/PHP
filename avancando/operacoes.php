@@ -1,6 +1,8 @@
 <?php
 // require só continua a execução se o arquivo for exportado com sucesso;
+// require_once importa apenas se a função já não estiver no código;
 // include ele tenta importar porém se não conseguir ele continua a execução;
+
 
 
 function sacar($nome, $valor)
@@ -12,7 +14,7 @@ function sacar($nome, $valor)
             if (is_numeric($valor)) {
                 if ($listaDados[$i]['valor'] > $valor){
                     $listaDados[$i]['valor'] -= $valor;
-                    echo "Transação Efetuada! Seu novo valor é de " . $listaDados[$i]['valor']  . "." . PHP_EOL;
+                    echo "Transação Efetuada! Seu novo valor é de {$listaDados[$i]['valor']}" . PHP_EOL;
                 } else {
                     echo "Saldo Insuficiente!" . PHP_EOL;
                 }
@@ -32,9 +34,9 @@ function depositar($nome, $valor)
         if ($listaDados[$i]['nome'] == $nome){
             if (is_numeric($valor) && $valor > 0){
                 $listaDados[$i]['valor'] += $valor;
-                echo "Transação Efetuada! Seu novo valor é de " . $listaDados[$i]['valor'] . "." . PHP_EOL;
+                echo "Transação Efetuada! Seu novo valor é de {$listaDados[$i]['valor']}." . PHP_EOL;
             } else {
-                echo "Falha na execução! Seu saldo é de: " . $listaDados[$i]['valor'] . "." . PHP_EOL;
+                echo "Falha na execução! Seu saldo é de: {$listaDados[$i]['valor']}." . PHP_EOL;
             }
         }
     }
