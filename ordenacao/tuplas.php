@@ -34,11 +34,12 @@ var_dump($nome, $idade, $anoNascimento);
 
 
 // comapact -> faz o inver, pega varias variaveis e retorna um array
-
+// variaveis precisam ser passadas como texto
 $nome2 = "Valdei";
 $nome21 = "Carol";
 $nome1 = "Ana";
 
 $novosNomes = compact('nome1', 'nome2', "nome21");
 var_dump($novosNomes);
+
 ?>;
