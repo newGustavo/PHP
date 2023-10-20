@@ -1,5 +1,7 @@
 <?php
 
+namespace PHP\POO\Modelo;
+
 class CPF
 {
     private $numero;

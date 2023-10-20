@@ -1,5 +1,8 @@
 <?php
 
+namespace PHP\POO\Modelo\Conta;
+use PHP\POO\Modelo\Conta\Titular;
+
 class Conta
 {
     private $titular;
@@ -46,8 +49,8 @@ class Conta
             return;
         }
 
-        $this->sacar($valorATransferir);
-        $contaDestino->depositar($valorATransferir);
+        $this->saca($valorATransferir);
+        $contaDestino->deposita($valorATransferir);
     }
 
     public function recuperaSaldo(): float
